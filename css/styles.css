@@ -15,13 +15,20 @@ body {
     font-size: 62.5%;
     color: #ffffff;
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.70) 75%, rgba(255,255,255,0.75) 100%);
-    background-repeat: no-repeat
+    background-repeat: no-repeat;
+
+    height: 100vh;
     
 }
 p {
     margin: 0;
     padding: 0;
     font-size: 1.2em;
+}
+@media (min-width: 768px){
+    p {
+        font-size: 1.4em;
+    }
 }
 h1 {
     font-size: 1.4rem;
@@ -44,7 +51,7 @@ label {
 }
 .container {
     width: 90%;
-    max-width: 50rem;
+    max-width: 80rem;
     margin: 0 auto;
 
     padding: 2rem;
@@ -71,6 +78,19 @@ input {
 main {
     padding: 3rem;
 
+}
+#formulario {
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    
+    font-size: 1em;
+}
+@media (min-width: 768px) {
+    #formulario {
+        grid-template-columns: repeat(2, 1fr 1fr);
+
+    }
 }
 h1::before {
     content: "";
@@ -106,7 +126,7 @@ h1::before {
 input {
     margin: 1rem 0;
     padding: 0 1rem;
-    height: 2rem;
+    height: 3em;
     border-radius: 0.4rem;
 }
 @media (min-width: 480px) {
@@ -146,19 +166,7 @@ input[type=submit] {
 .calculadora__coste {
     padding: 1rem 0;
 }
-#formulario {
-    padding: 1rem 0;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    
-    font-size: 1em;
-}
-@media (min-width: 768px) {
-    #formulario {
-        grid-template-columns: repeat(2, 1fr 1fr);
 
-    }
-}
 
 /* Button Start */
 
@@ -192,9 +200,12 @@ input.btn:hover {
 /*   FOOTER   */
 .footer {
     padding: 2rem 5rem;
+    position: fixed;
+    bottom: 0;
 }
 .footer p {
     margin: 0 auto;
     color: #000;
     font-weight: bold;
+    font-size: 1.4em;
 }
