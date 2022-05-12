@@ -81,6 +81,9 @@ function calculadora(){
     if(segsocWorker > 264.92) {
         segsocWorker = 264.92;
     }
+    if(salaryDaily < 39){
+        salaryDaily = 39;
+    }
     
     // Calculos e imprimir resultado por pantalla
     let totalCost = salary + segsocCost;
