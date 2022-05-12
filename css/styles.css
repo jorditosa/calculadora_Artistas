@@ -1,6 +1,13 @@
 /**** custom properties ********/
+@font-face {
+    font-family: 'Canela';
+    src: url('../fonts/canela/Canela-Regular-Trial.otf'),
+        url('../fonts/canela/Canela-Bold-Trial.otf'),
+        url('../fonts/canela/Canela-Medium-Trial.otf');
+    font-weight: 1 999;
+    font-style: normal;
+}
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
 html {
     box-sizing: border-box;
@@ -11,28 +18,29 @@ html {
     padding: 0;
 }
 body {
-    font-family:'Montserrat', sans-serif;
+    font-family:'Canela', sans-serif;
     font-size: 62.5%;
     color: #ffffff;
     background: linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0.70) 75%, rgba(255,255,255,0.75) 100%);
     background-repeat: no-repeat;
 
     height: 100%;
+    word-spacing: 0.1rem;
     
 }
 p {
     margin: 0;
     padding: 0;
-    font-size: 1.2em;
-    line-height: 1.4;
+    font-size: 1.4em;
+    line-height: 1.5;
 }
 @media (min-width: 768px){
     p {
-        font-size: 1.4em;
+        font-size: 1.6em;
     }
 }
 h1 {
-    font-size: 1.2rem;
+    font-size: 2.2em;
     text-align: left;
     margin: 1rem 0;
     color: #fff;
@@ -45,7 +53,7 @@ a:hover {
     opacity: 0.6;
 }
 label {
-    font-size: 1.2em;
+    font-size: 1.4em;
     text-align: left;
     justify-content: center;
 }
@@ -57,13 +65,13 @@ label {
 }
 .container {
     width: 90%;
-    max-width: 70rem;
+    max-width: 60rem;
     margin: 0 auto;
 
-    padding: 2rem;
 }
 input {
-    font-family:'Montserrat', sans-serif;
+    font-family:'Canela', sans-serif;
+    font-weight: bold;
 }
 
 
@@ -82,7 +90,7 @@ input {
 
 /**** Calculadora  *******/
 main {
-    padding: 3rem;
+    padding: 2rem;
 
 }
 #formulario {
@@ -162,7 +170,7 @@ input.btn {
     border-top-left-radius: 0.4rem;
     border-bottom-left-radius: 0.4rem;
     margin: 1rem auto;
-    font-size: 1.6em;
+    font-size: 1.8em;
     font-weight: 700;
 
     max-width: 20rem;
@@ -185,19 +193,26 @@ input.btn:hover {
 
 /*   FOOTER   */
 .footer {
-    padding: 2rem;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
 }
 @media (min-width: 768px) {
     .footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 .footer p {
-    margin: 0 auto;
+    display: inline;
     color: #000;
     font-weight: bold;
-    font-size: 1.4em;
+    font-size: 1.6em;
+}
+.footer img {
+    width: 12rem;
 }

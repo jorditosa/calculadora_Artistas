@@ -10,16 +10,16 @@
 </head>
 <body class="calculadora">
     <main class="container">
-        <h1>Calculadora coste total Régimen Artistas</h1>
-        <p>El funcionamiento y cotización del régimen especial de artistas de Seguridad Social está condicionado por la propia dinámica del artista en espectáculos, en la que normalmente las altas se realizan en días sueltos y no se trabaja/cotiza por todos los días del mes. Si quieres saber más, en este enlace encontrarás la <a href="https://www.mites.gob.es/es/guia/texto/guia_14/contenidos/guia_14_30_1.htm" title="Guia artistas ministerio trabajo">información oficial del ministerio</a>.</p>
+        <h1>Calculadora salario neto y coste total Régimen esp. Artistas</h1>
+        <p>El funcionamiento y cotización del régimen especial de artistas de Seguridad Social está condicionado por la propia dinámica del artista en espectáculos, en la que normalmente las altas se realizan en días sueltos y no se trabaja/cotiza por todos los días del mes. Si quieres saber más, en este enlace encontrarás la <a href="https://www.mites.gob.es/es/guia/texto/guia_14/contenidos/guia_14_30_1.htm" title="Guia artistas ministerio trabajo">información oficial del ministerio de trabajo y Seguridad Social</a>.</p>
         <hr>
         <form action="/formulario" method="POST" class="calculadora__section" id="formulario">
             <label for="salario">Tarifa total</label>
             <input type="number" id="salario">
             <label for="dias">Total días alta</label>
-            <input type="number" id="dias">
+            <input type="number" id="dias" max="31">
             <label for="irpf">Irpf a aplicar</label>
-            <input type="number" id="irpf" placeholder="15">
+            <input type="number" id="irpf" placeholder="15" min="15">
             <input class="btn" type="submit" value="Calcular!" id="formCalc">
         </formn>
         
@@ -36,8 +36,11 @@
 </main>
 
 <footer class="footer container">
-    <p class="footer__text">&copy; Monday Office Advisers 2022.</p>
-    <p class="footer__text">Todos los derechos reservados.</p>
+    <img src="img/logo.svg" alt="logo Monday Office Advisers">
+    <div class="footer__terms">
+        <p class="footer__text">&copy; Monday Office Advisers 2022.</p>
+        <p class="footer__text">&nbsp;Todos los derechos reservados.</p>
+    </div>
 </footer>
 
 
