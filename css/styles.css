@@ -1,0 +1,189 @@
+/**** custom properties ********/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+*, *::after, *::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family:'Montserrat', sans-serif;
+    font-size: 62.5%;
+    color: #ffffff;
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.70) 75%, rgba(255,255,255,0.75) 100%);
+    background-repeat: no-repeat
+    
+}
+p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+}
+h1 {
+    font-size: 1.4rem;
+    text-align: left;
+    margin: 1rem 0;
+    color: #fff;
+    position: relative;
+    padding-left: 2.4rem ;
+}
+label {
+    font-size: 1.2em;
+    text-align: left;
+    justify-content: center;
+}
+.container {
+    width: 90%;
+    max-width: 50rem;
+    margin: 0 auto;
+
+    padding: 2rem;
+}
+input {
+    font-family:'Montserrat', sans-serif;
+}
+
+
+/*** Js  events***/
+
+.opacity-50 {
+    opacity: 0.5;
+}
+.opacity-50:hover {
+    cursor: not-allowed;
+}
+.error-text {
+    padding: 0.6rem;
+    background-color: #ae6565;
+}
+
+/**** Calculadora  *******/
+main {
+    padding: 3rem;
+
+}
+h1::before {
+    content: "";
+    display: block;
+    background: radial-gradient(circle, rgb(2, 1, 24) 0%, rgba(255,255,255,1) 47%, rgba(0,0,0,1) 100%);
+    border-radius: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 2rem;
+    height: 2rem;
+}
+@media (min-width: 768px) {
+    h1::before {
+        bottom: 0;
+    }
+}
+
+.calculadora {
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+ 
+}
+.calculadora p {
+    margin: 1rem 0;
+}
+.calculadora__form {
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+}
+input {
+    margin: 1rem 0;
+    padding: 0 1rem;
+    height: 2rem;
+    border-radius: 0.4rem;
+}
+@media (min-width: 480px) {
+    input {
+        max-width: 10rem;
+    }
+}
+input[type=submit] {
+    background-color: #e2e2e2;
+}
+input[type=submit] {
+    
+}
+.calculadora__results {
+    padding: 1rem 0;
+    text-align: left;
+    font-size: 1.2em;
+    display: flex;
+    flex-direction: column;
+}
+.calculadora__results span {
+    font-weight: bold;
+    font-size: 1.3em;
+}
+@media (min-width: 768px) {
+    .calculadora__results {
+        grid-column: 1 / 4;
+        padding: 2rem 0;
+    }
+    .calculadora__results span {
+        font-weight: bold;
+        font-size: 1.6em;
+    }
+}
+
+.calculadora__neto,
+.calculadora__coste {
+    padding: 1rem 0;
+}
+#formulario {
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    
+    font-size: 1em;
+}
+@media (min-width: 768px) {
+    #formulario {
+        grid-template-columns: repeat(2, 1fr 1fr);
+
+    }
+}
+
+/* Button Start */
+
+input.btn {
+    display: block;
+    background-color: #ffffff;
+    border: none;
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+    margin: 1rem 0;
+    font-size: 1.6em;
+    font-weight: 700;
+
+    max-width: 10rem;
+    width: 100%;
+    height: 2rem;
+
+    transition: all 0.5s ease-in-out;
+}
+input.btn:hover {
+    background:  rgba(0, 0, 0, 0.85);
+    color: #fff;
+    cursor: pointer;
+}
+
+/*   FOOTER   */
+.footer {
+    padding: 2rem 5rem;
+}
+.footer p {
+    margin: 0 auto;
+    color: #000;
+    font-weight: bold;
+}
