@@ -126,9 +126,9 @@ input {
     border-radius: 0.4rem;
     font-family: sans-serif;
 }
-@media (min-width: 480px) {
+@media (min-width: 768px) {
     input {
-        max-width: 8rem;
+        max-width: 15rem;
         margin: auto auto;
     }
 }
@@ -160,6 +160,7 @@ input[type=submit] {
         display: inline-block;
     }
     .calculadora__results span {
+        font-family: sans-serif;
         font-weight: bold;
         font-size: 1.6em;
     }
@@ -175,20 +176,25 @@ input[type=submit] {
 .calculadora__coste {
     padding: 1rem 0;
 }
-
+input[type=number]::placeholder{
+    opacity: 0.3;
+}
 
 /* Button Start */
 
+input:focus {
+    background-color: rgb(255, 242, 232);
+}
 input.btn {
     display: block;
     background-color: #ffffff;
-    border: 0.2rem outset #fff;
+    border: 0.1rem outset #fff;
     border-top-left-radius: 0.4rem;
     border-bottom-left-radius: 0.4rem;
     margin: 1rem auto;
     font-size: 1.8em;
 
-    max-width: 8rem;
+    max-width: 13rem;
     width: 100%;
     height: 2.4rem;
 
@@ -201,7 +207,7 @@ input.btn {
 }
 input.btn:hover {
     background:  rgba(0, 0, 0, 0.85);
-    border: 0.2rem outset #000;
+    border: 0.1rem outset #fff;
     color: #fff;
     cursor: pointer;
 }
