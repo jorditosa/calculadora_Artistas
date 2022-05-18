@@ -91,7 +91,7 @@ function calculadora(){
     let costResult = document.querySelector('.calculadora__coste');
 
     totalCostText.innerHTML = 'El coste total de la nómina será de: '
-    costResult.innerHTML =  totalCost.toFixed(2)+'€.';
+    costResult.innerHTML =  (new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(totalCost));
     
 
     parseFloat(irpfGross = salary * irpf);
@@ -99,9 +99,11 @@ function calculadora(){
     let totalResultText = document.querySelector('.calculadora__neto--text');
     let netResult = document.querySelector('.calculadora__neto');
 
-    netResult.innerHTML = net.toFixed(2) +'€.';
+    netResult.innerHTML = (new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(net));
     totalResultText.innerHTML = 'El neto a percibir será de: '
 
+ 
 };
+
 
 
