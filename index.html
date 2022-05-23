@@ -1,121 +1,53 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>El blog del Bitxo</title>
-
+    <meta name="author" content="Jordi Sanchez Torras">
+    <title>Calculadora Régimen de artistas | Monday Office Advisers</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-    <header>
-        <div class="header__nav">
-                <nav class="container">
-                        <ul class="header__nav--list">
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-logo active" href="index.html">El <span class="capital-letter">blog</span> <span>del Bitxo</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="blog.html"><span class="capital-letter">Racons</span> del món</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="gallery.html">Algunes <span class="capital-letter">fotos</span></a>
-                            </li>
-                        </ul>
-                </nav>
-        </div>
-        <section class="header__hero">
-            <div class="panel active" style="background-image:url('img/mainscenery_opt.jpg');">
-                <a href="#matagalls"><h2>Catalunya</h2></a>
+<body class="calculadora">
+    <main class="container">
+        <h1>Calculadora salario neto y coste total Régimen esp. Artistas</h1>
+        <p>El funcionamiento y cotización del régimen especial de artistas de Seguridad Social está condicionado por la propia dinámica del artista en espectáculos, en la que normalmente las altas se realizan en días sueltos y no se trabaja/cotiza por todos los días del mes. Si quieres saber más, en este enlace encontrarás la <a href="https://www.mites.gob.es/es/guia/texto/guia_14/contenidos/guia_14_30_1.htm" title="Guia artistas ministerio trabajo">información oficial del ministerio de trabajo y Seguridad Social</a>.</p>
+        <hr>
+        <form action="/formulario" method="POST" class="calculadora__section" id="formulario">
+            <label for="salario">Tarifa total</label>
+            <input type="number" id="salario">
+            <label for="dias">Total días alta</label>
+            <input type="number" id="dias" max="31">
+            <label for="irpf">Irpf a aplicar</label>
+            <input type="number" id="irpf" placeholder="15" min="15" max="50">
+            <input class="btn" type="submit" value="Calcular" id="formCalc">
+        </formn>   
+
+        <section class="calculadora__results">
+            <div class="calculadora__neto--container">
+                <p class="calculadora__neto--text">
+                </p>
+                <span class="calculadora__neto"></span>
             </div>
-            <div class="panel" style="background-image:url('img/teide.jpg');">
-                <a href="#teide2022"><h2>Espanya</h2></a>
-            </div>
-            <div class="panel" style="background-image:url('img/banner-01.jpg');">
-                <a href="#teide2022"><h2>País vasc</h2></a>
+            <div class="calculadora__coste--container">
+                <p class="calculadora__coste--text">
+                </p>
+                <span class="calculadora__coste"></span>  
             </div>
         </section>
-    </header>
+    </div>
+</main>
 
-    <section class="intro">
-        <div class="container intro__container">
-            <span>Benvingudes al blog de la passió per la muntanya!</span>
-            <p>Soc l'Oriol Sivill, conegut com a Uri i/o el bitxo. Aqui us compartiré totes les meves aventures de muntanya, amb explicacions, rutes i desnivells, per tal de que ho pogueu utilitzar i viure les mateixes experiències que jo he viscut i, sobretot, poder gaudir de la natura.</p>
-            
-        </div>
-    </section>
-
-    <main class="articles">
-        <article class="container" id="teide2022">
-                <h2>Pujada al Teide</h2>
-                <time datetime="2022-04-03">03 d'abril del 2022</time>
-                <div class="article__info">
-                    <span class="article__info--item1">25 km</span>
-                    <span class="article__info--item2">+ 3.000</span>
-                </div>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi minima optio quo excepturi autem numquam aliquid, culpa deleniti neque reprehenderit?
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi minima optio quo excepturi autem numquam aliquid, culpa deleniti neque reprehenderit?
-                </p>
-                <div class="article__container--img">
-                    <img src="img/teide.jpg" alt="imagen teide">
-                    <img src="img/banner-01.jpg" alt="imagen uri">     
-                </div>    
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo esse similique possimus atque illum cum vitae corrupti voluptates aliquid odio.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam nobis reiciendis aut. Aperiam suscipit, aut culpa illum magni quibusdam cum soluta ipsum sint dolorem at minus! Dolorem debitis quia asperiores fugit consectetur dolores magni? Cum debitis autem maiores quae impedit. Impedit, ab est doloremque odio molestias iure neque adipisci nemo nihil necessitatibus nulla assumenda beatae facere mollitia debitis fugiat eaque maiores esse ipsam vel? Delectus quibusdam error placeat iusto, mollitia expedita ea nesciunt. Nam, non perspiciatis modi harum officia praesentium reiciendis! Enim modi provident beatae voluptas. Fugiat voluptate quidem quisquam necessitatibus recusandae cum optio, velit excepturi cumque, earum ipsam consequuntur!</p>
-                <div class="article__container--img">
-                    <img src="img/teide.jpg" alt="imagen teide">
-                    <img src="img/banner-01.jpg" alt="imagen uri">     
-                </div>    
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo esse similique possimus atque illum cum vitae corrupti voluptates aliquid odio.</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam nobis reiciendis aut. Aperiam suscipit, aut culpa illum magni quibusdam cum soluta ipsum sint dolorem at minus! Dolorem debitis quia asperiores fugit consectetur dolores magni? Cum debitis autem maiores quae impedit. Impedit, ab est doloremque odio molestias iure neque adipisci nemo nihil necessitatibus nulla assumenda beatae facere mollitia debitis fugiat eaque maiores esse ipsam vel? Delectus quibusdam error placeat iusto, mollitia expedita ea nesciunt. Nam, non perspiciatis modi harum officia praesentium reiciendis! Enim modi provident beatae voluptas. Fugiat voluptate quidem quisquam necessitatibus recusandae cum optio, velit excepturi cumque, earum ipsam consequuntur!</p>
-        </article>
-
-        <hr class="container">
-
-        <article class="container" id="matagalls">
-            <h2>Pujada al Teide</h2>
-            <time datetime="2022-04-03">03 d'abril del 2022</time>
-            <div class="article__info">
-                <span class="article__info--item1">25 km</span>
-                <span class="article__info--item2">+ 3.000</span>
-            </div>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi minima optio quo excepturi autem numquam aliquid, culpa deleniti neque reprehenderit?
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi minima optio quo excepturi autem numquam aliquid, culpa deleniti neque reprehenderit?
-            </p>
-            <div class="article__container--img">
-                <img src="img/teide.jpg" alt="imagen teide">
-                <img src="img/banner-01.jpg" alt="imagen uri">     
-            </div>    
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo esse similique possimus atque illum cum vitae corrupti voluptates aliquid odio.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam nobis reiciendis aut. Aperiam suscipit, aut culpa illum magni quibusdam cum soluta ipsum sint dolorem at minus! Dolorem debitis quia asperiores fugit consectetur dolores magni? Cum debitis autem maiores quae impedit. Impedit, ab est doloremque odio molestias iure neque adipisci nemo nihil necessitatibus nulla assumenda beatae facere mollitia debitis fugiat eaque maiores esse ipsam vel? Delectus quibusdam error placeat iusto, mollitia expedita ea nesciunt. Nam, non perspiciatis modi harum officia praesentium reiciendis! Enim modi provident beatae voluptas. Fugiat voluptate quidem quisquam necessitatibus recusandae cum optio, velit excepturi cumque, earum ipsam consequuntur!</p>
-            <div class="article__container--img">
-                <img src="img/teide.jpg" alt="imagen teide">
-                <img src="img/banner-01.jpg" alt="imagen uri">     
-            </div>    
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo esse similique possimus atque illum cum vitae corrupti voluptates aliquid odio.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam nobis reiciendis aut. Aperiam suscipit, aut culpa illum magni quibusdam cum soluta ipsum sint dolorem at minus! Dolorem debitis quia asperiores fugit consectetur dolores magni? Cum debitis autem maiores quae impedit. Impedit, ab est doloremque odio molestias iure neque adipisci nemo nihil necessitatibus nulla assumenda beatae facere mollitia debitis fugiat eaque maiores esse ipsam vel? Delectus quibusdam error placeat iusto, mollitia expedita ea nesciunt. Nam, non perspiciatis modi harum officia praesentium reiciendis! Enim modi provident beatae voluptas. Fugiat voluptate quidem quisquam necessitatibus recusandae cum optio, velit excepturi cumque, earum ipsam consequuntur!</p>
-    </article>
-
-    </main>
-   
-    <footer class="footer">
-        <div class="container">
-            <div>
-                <p>Segueix-me a les xarxes socials per més info de les meves rutes i experiències.</p>
-                <ul class="footer__social">
-                    <li><a target="_blank" class="footer__social--img" href="https://www.instagram.com/uri_mountains/?hl=es"><img src="img/instagram.png" alt="icono instagram"></a></li>
-                    <li><a class="footer__social--img" href=""><img src="img/facebook.png" alt="icono facebook"></a></li>
-                </ul>
-            </div>
-            <div class="footer__rights">
-                <p>Tots els drets reservats,&copy; 2022</p>
-            </div>
-        </div>
-    </footer>
+<footer class="footer container">
+    <img src="img/logo.svg" alt="logo Monday Office Advisers">
+    <div class="footer__terms">
+        <p class="footer__text">&copy; Monday Office Advisers 2022.</p>
+        <p class="footer__text">&nbsp;Todos los derechos reservados.</p>
+    </div>
+</footer>
 
 
-
-    <script src="js/carousel.js"></script>
+    <script src="js/app.js"></script>
+    <!-- <script src="js/interactive.js"></script> -->
 </body>
 </html>
