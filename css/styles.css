@@ -246,3 +246,15 @@ input.btn:hover {
 .footer img {
     width: 12rem;
 }
+
+/* MENSAJES DE ERROR */
+
+.error {
+    background-color: #ae6565;
+    height: 2em;
+    border-radius: 1rem;
+    text-align: center;
+    color: #fff;
+    grid-column: 1 / 5;
+
+}
