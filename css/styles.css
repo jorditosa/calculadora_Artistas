@@ -8,32 +8,32 @@
     font-style: normal;
 }
 
-
-html {
-    box-sizing: border-box;
-}
 *, *::after, *::before {
-    box-sizing: inherit;
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+html {
+    box-sizing: inherit;
+    height: auto;
 }
 body {
     font-family:'Canela', sans-serif;
     font-size: 62.5%;
     color: #ffffff;
-    background: linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0,0,0,0.70) 75%, rgba(255,255,255,0.75) 100%);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 30%, rgba(0, 0, 0, 0.40) 70%, rgba(255,255,255,0.75) 100%);
     background-repeat: no-repeat;
 
     height: 100%;
     min-height: 100vh;
-    word-spacing: 0.1rem;
-    
+    word-spacing: 0.1rem;  
+    line-height: 1.5; 
 }
 p {
     margin: 0;
     padding: 0;
-    font-size: 1.4em;
-    line-height: 1.5;
+    font-size: 1.2em;
+    letter-spacing: 0.05rem;
 }
 @media (min-width: 768px){
     p {
@@ -133,7 +133,7 @@ input {
 @media (min-width: 768px) {
     input {
         max-width: 15rem;
-        margin: auto auto;
+        margin: auto 0;
     }
 }
 input[type=submit] {
@@ -256,11 +256,12 @@ input.btn:hover {
 
 .error {
     background-color: #ae6565;
-    outline: 0.2rem solid #fff;
     height: 2em;
-    border-radius: 1rem;
+    border-radius: 0.3rem;
     text-align: center;
-    color: #fff;
     grid-column: 1 / 5;
+    opacity: 0.9;
+
+    margin: auto 0;
 
 }
