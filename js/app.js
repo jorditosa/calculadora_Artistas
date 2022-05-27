@@ -76,7 +76,6 @@ function calculadora(e){
         let totalCost = salary + segsocCost;
         let totalCostText = document.querySelector('.calculadora__coste--text');
         let costResult = document.querySelector('.calculadora__coste');
-
         totalCostText.innerHTML = 'El coste total de la nómina será de: '
         costResult.innerHTML =  (new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(totalCost));
         
@@ -85,7 +84,6 @@ function calculadora(e){
         let net = salary - segsocWorker - irpfGross;
         let totalResultText = document.querySelector('.calculadora__neto--text');
         let netResult = document.querySelector('.calculadora__neto');
-
         netResult.innerHTML = (new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(net));
         totalResultText.innerHTML = 'El neto a percibir será de: '
 
@@ -101,6 +99,8 @@ function calculadora(e){
             errorAlert.remove();
         }, 5000)
     }
+
+    formulario.reset();
 
     // Control bases máximas y mínimas
 
