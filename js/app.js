@@ -99,7 +99,7 @@ function calculadora(e){
 
         setTimeout(() => {
             errorAlert.remove();
-        }, 4000)
+        }, 5000)
     }
 
     // Control bases máximas y mínimas

@@ -188,6 +188,11 @@ input[type=number]::placeholder{
 
 input:focus {
     background-color: rgb(255, 242, 232);
+    outline: 0.2rem solid #7aac66;
+}
+input:invalid {
+    background-color: rgb(255, 242, 232);
+    outline: 0.2rem solid #ae6565;
 }
 input.btn {
     display: block;
@@ -251,6 +256,7 @@ input.btn:hover {
 
 .error {
     background-color: #ae6565;
+    outline: 0.2rem solid #fff;
     height: 2em;
     border-radius: 1rem;
     text-align: center;
