@@ -1,10 +1,8 @@
 /**** custom properties ********/
 @font-face {
     font-family: 'Canela';
-    src: url('../fonts/canela/Canela-Regular-Trial.otf'),
-        url('../fonts/canela/Canela-Bold-Trial.otf'),
-        url('../fonts/canela/Canela-Medium-Trial.otf');
-    font-weight: 1 999;
+    src: url('../fonts/canela/Canela-Regular-Trial.otf');
+    font-weight: 1 900;
     font-style: normal;
 }
 
@@ -14,6 +12,7 @@
     --error-color: #bb4949;
 }
 
+/* Parte de código totalmente editable dependiendo del estilo principal utilizado en la web. Es un codigo plantilla para poder trabajar y crear la calculadora*/
 *, *::after, *::before {
     box-sizing: border-box;
     margin: 0;
@@ -42,13 +41,6 @@ p {
         font-size: 1.6em;
     }
 }
-a {
-    text-decoration: none;
-    color: rgb(214, 199, 199);
-}
-a:hover {
-    opacity: 0.6;
-}
 label {
     font-size: 1.6em;
     text-align: left;
@@ -60,13 +52,12 @@ label {
         margin: auto 0;
     }
 }
-main {
-    margin: 4rem 0;
-}
+/* fin código plantilla */
+
+
 .container {
     width: 90%;
     margin: 0 auto;
-
 }
 .logo {
     width: 175px;
@@ -89,11 +80,37 @@ main {
 
 .calculadora-title {
     font-size: 1em;
-    margin: 1em 0;
+    margin-top: 2em;
     color: #fff;
 }
+.calculadora-title h1 {
+    display: flex;
+    border-bottom: 1px solid #fff;
+    padding: 0.2em 0;
+    font-size: 22px;
+    text-align: center;
+}
+.calculadora-title h1::after {
+    content: '';
+    flex-grow: 1;
+    border-bottom: 2px solid #fff;
+    margin: auto 0 auto 1em;
+}
 .form-container {
-    margin: 6em 8em;
+    margin: 2em calc(100%-10%);
+}
+@media (min-width: 768px) {
+    .calculadora-title {
+        margin-top: 5em;
+    }
+    .calculadora-title h1 {
+        border-bottom: none;
+        font-size: 32px;
+        text-align: left;
+    }
+    .form-container {
+        margin: 5em 8em;
+    }
 }
 
 .form-inputs {
@@ -113,6 +130,14 @@ main {
 .form-description {
     font-size: 16px;
 }
+.form-description a {
+    text-decoration: none;
+    color: rgb(214, 199, 199);
+}
+.form-description a:hover {
+    opacity: 0.6;
+}
+
 .calculadora {
     margin-top: 2em;
     margin-bottom: 2em;
@@ -125,13 +150,13 @@ main {
 }
 
 input {
-    font-family:'Canela', sans-serif;
     margin: 1rem 0;
     padding: 0 1rem;
     height: 4em;
     border: 2px solid #fff;
     background-color: #000;
     color: #fff;
+    font-size: 14px;
 }
 @media (min-width: 768px) {
     input {
@@ -142,12 +167,27 @@ input[type=submit] {
     background-color: #e2e2e2;
     margin: 1rem 0;
 }
+.result-overlay {
+    width: 75%;
+    height: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.result-overlay_close {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 0;
+    right: 0;
+}
+
 .calculadora__results {
     padding: 2rem 0;
     text-align: left;
     font-size: 1.2em;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr 1fr);
 }
 .calculadora__results p {
     margin: 0.4rem 0;
@@ -158,29 +198,49 @@ input[type=submit] {
     padding: 0.4rem 0;
 }
 @media (min-width: 768px) {
-    .calculadora__results {
-        padding: 2rem 0;
-        grid-column: 1 / 5;
-    }
-
     .calculadora__results span {
         font-family: sans-serif;
         font-weight: bold;
         font-size: 1.6em;
     }
 }
+.calculadora__results__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
 .calculadora__neto--container {
-    grid-column: 1 / 3;
     text-align: center;
+    color: #000;
+    font-size: 16px;
 }
 .calculadora__coste--container {
-    grid-column: 3 / 5;
     text-align: center;
+    color: #000;
+    font-size: 16px;
 }
 
 .calculadora__neto,
 .calculadora__coste {
     padding: 1rem 0;
+    display: flex;
+}
+.calculadora__neto::before,
+.calculadora__coste::before {
+    content: '';
+    flex-grow: 1;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    margin: auto 1em;
+}
+.calculadora__neto::after,
+.calculadora__coste::after {
+    content: '';
+    flex-grow: 1;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    margin: auto 1em;
 }
 input[type=number]::placeholder{
     color: #fff;
@@ -192,11 +252,12 @@ input[type=number]::placeholder{
 input:focus {
     background-color: #000;
     color: #fff;
-    outline: 0.1rem solid var(--validated-color);
+    border: 0.1rem solid var(--validated-color);
+    outline: 0.2rem solid var(--validated-color);
 }
 input:invalid {
     background-color: #000;
-    outline: 0.1rem solid var(--error-color);
+    border: 0.2rem solid var(--error-color);
 }
 input.btn {
     display: block;
@@ -206,7 +267,7 @@ input.btn {
     margin: 2em auto;
     font-size: 1em;
 
-    width: 7rem;
+    width: 10em;
     height: 3rem;
 
     transition: all 0.4s ease-in-out;
@@ -252,8 +313,8 @@ input.btn:hover {
 /* MENSAJES DE ERROR */
 
 .error {
-    background-color: #ae6565;
-    padding: 0.6em;
+    background-color: var(--error-color);
+    padding: 0.4em;
     text-align: center;
     grid-column: 1 / 5;
     opacity: 0.9;

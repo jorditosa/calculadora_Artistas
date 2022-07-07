@@ -28,6 +28,9 @@ formulario.addEventListener('submit', calculadora);
 function calculadora(e){
     e.preventDefault();
 
+    let resultAlert = document.querySelector('.calculadora__results');
+    resultAlert.classList.add('result-overlay');
+
     let salaryDaily = parseFloat(salary / days);
     console.log(salaryDaily);
     let segsocCost;
@@ -92,11 +95,10 @@ function calculadora(e){
         errorBox.textContent = "Por favor, introduce datos válidos";
         errorBox.classList.add('error');
 
-        let errorAlert = document.querySelector('.calculadora__results');
-        errorAlert.appendChild(errorBox);
+        resultAlert.appendChild(errorBox);
 
         setTimeout(() => {
-            errorAlert.remove();
+            resultAlert.remove();
         }, 5000)
     }
 
