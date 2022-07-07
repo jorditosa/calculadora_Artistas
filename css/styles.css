@@ -25,7 +25,6 @@ html {
 }
 body {
     font-family:'Canela', sans-serif;
-    font-size: 62.5%;
     color: #ffffff;
     background: #000;
 
@@ -42,12 +41,6 @@ p {
     p {
         font-size: 1.6em;
     }
-}
-h1 {
-    font-size: 2.2em;
-    text-align: left;
-    margin: 1rem 0;
-    color: #fff;
 }
 a {
     text-decoration: none;
@@ -94,6 +87,11 @@ main {
 
 /**** Calculadora  *******/
 
+.calculadora-title {
+    font-size: 1em;
+    margin: 1em 0;
+    color: #fff;
+}
 .form-container {
     margin: 6em 8em;
 }
@@ -113,7 +111,7 @@ main {
     }
 }
 .form-description {
-
+    font-size: 16px;
 }
 .calculadora {
     margin-top: 2em;
@@ -130,7 +128,7 @@ input {
     font-family:'Canela', sans-serif;
     margin: 1rem 0;
     padding: 0 1rem;
-    height: 3em;
+    height: 4em;
     border: 2px solid #fff;
     background-color: #000;
     color: #fff;
@@ -186,6 +184,7 @@ input[type=submit] {
 }
 input[type=number]::placeholder{
     color: #fff;
+    font-size: 1.1em;
 }
 
 /* Button Start */
@@ -205,13 +204,12 @@ input.btn {
     color: #000;
     border: 0.1rem outset #fff;
     margin: 2em auto;
-    font-size: 1.4em;
+    font-size: 1em;
 
-    max-width: 8rem;
-    width: 100%;
-    height: 2.6rem;
+    width: 7rem;
+    height: 3rem;
 
-    transition: all 0.5s ease-in-out;
+    transition: all 0.4s ease-in-out;
 }
 input.btn:hover {
     background:  rgba(0, 0, 0, 0.85);
