@@ -18,7 +18,7 @@
         <section class="form-container">
             <form action="/formulario" method="POST" class="calculadora__section" id="formulario">
                 <div class="form-inputs">
-                    <input type="number" id="salario" pattern="[0-9]{2-6}" placeholder="Tarifa total">
+                    <input type="number" id="salario" pattern="[0-9]{2-6}" placeholder="Tarifa total" max="99999">
                 <input type="number" id="dias" max="31" pattern="[0-9]{2}" placeholder="Total días alta">
                 <input type="number" id="irpf" placeholder="IRPF a aplicar" min="15" max="50" pattern="[0-9]{2}">
                 </div>
@@ -27,7 +27,8 @@
     
             <section class="calculadora__results">
                 <div>
-                    <img class="result-overlay_close" src="img/close-circle-outline.svg" alt="close">
+                    <img class="result-overlay_close" src="img/close-outline.svg" alt="close">
+                    <img class="result-overlay_reset" src="img/refresh-outline.svg" alt="reset">
                 </div>
                 <div class="calculadora__results__container">
                     <div class="calculadora__neto--container">

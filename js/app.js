@@ -8,6 +8,9 @@ let irpfIn = document.querySelector('#irpf');
 let irpf;
 const formulario = document.querySelector('#formulario');
 
+const resultAlert = document.querySelector('.calculadora__results');
+const resultClose = document.querySelector('.result-overlay_close');
+
 // EVENT LISTENERS
 salarioIn.addEventListener('input', (e) => {
     salary = parseFloat(e.target.value);
@@ -23,13 +26,19 @@ irpfIn.addEventListener('input', (e) => {
 })
 formulario.addEventListener('submit', calculadora);
 
+resultClose.addEventListener("click", () =>{
+    resultAlert.style.display = "none";
+});
+
+
+
 
 // FUNCIONES
 function calculadora(e){
     e.preventDefault();
 
-    let resultAlert = document.querySelector('.calculadora__results');
     resultAlert.classList.add('result-overlay');
+    resultAlert.style.display = "block";
 
     let salaryDaily = parseFloat(salary / days);
     console.log(salaryDaily);

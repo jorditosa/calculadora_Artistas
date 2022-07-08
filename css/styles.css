@@ -169,7 +169,7 @@ input[type=submit] {
 }
 .result-overlay {
     width: 75%;
-    height: 50%;
+    height: 75%;
     background-color: #fff;
     position: absolute;
     top: 50%;
@@ -183,8 +183,21 @@ input[type=submit] {
     top: 0;
     right: 0;
 }
+.result-overlay_reset {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 100px;
+    right: 0;
+}
+.result-overlay_close:hover,
+.result-overlay_reset:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+}
 
 .calculadora__results {
+    display: none;
     padding: 2rem 0;
     text-align: left;
     font-size: 1.2em;
