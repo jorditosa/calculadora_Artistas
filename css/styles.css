@@ -32,6 +32,16 @@ body {
     word-spacing: 0.1rem;  
     line-height: 1.5; 
 }
+header {
+    background-color: #000;
+    top: 0;
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    height: 75px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
 p {
     margin: 0;
     padding: 0;
@@ -55,12 +65,16 @@ label {
 /* fin código plantilla */
 
 
-.container {
-    width: 90%;
-    margin: 0 auto;
+.calculadora {
+    padding: 50px 30px;
 }
+
 .logo {
-    width: 175px;
+    height: 57px;
+    width: auto;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    transition: opacity .5s ease-in;
 }
 
 /*** Js  events***/
@@ -138,10 +152,6 @@ label {
     opacity: 0.6;
 }
 
-.calculadora {
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
 .calculadora p {
     margin: 1rem 0;
 }
@@ -167,8 +177,8 @@ input[type=submit] {
     margin: 1rem 0;
 }
 .result-overlay {
-    width: 75%;
-    height: 75%;
+    width: calc(100% - 60px);
+    height: 55%;
     background-color: #fff;
     position: absolute;
     top: 50%;
@@ -177,15 +187,15 @@ input[type=submit] {
 }
 .result-overlay_close {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     top: 5px;
     right: 5px;
 }
 .result-overlay_reset {
     position: absolute;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     top: 60px;
     right: 5px;
 }
@@ -211,9 +221,9 @@ input[type=submit] {
 }
 @media (min-width: 768px) {
     .calculadora__results span {
-        font-family: sans-serif;
-        font-weight: bold;
-        font-size: 1.6em;
+        font-size: 1.2em;
+        letter-spacing: 1.5px;
+        font-weight: 700;
     }
 }
 .calculadora__results__container {
@@ -221,17 +231,24 @@ input[type=submit] {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    height: 100%;
     gap: 2em;
 }
 .calculadora__neto--container {
     text-align: center;
     color: #000;
     font-size: 16px;
+    width: 50%;
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
 }
 .calculadora__coste--container {
     text-align: center;
     color: #000;
     font-size: 16px;
+    width: 50%;
+    box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
 }
 
 .calculadora__neto,
@@ -274,18 +291,23 @@ input:invalid {
 }
 input.btn {
     display: block;
-    background-color: #ffffff;
+    background-color: #eee;
     color: #000;
-    border: 0.1rem outset #fff;
+    border-style: solid;
+    border: 0.1rem outset #eee;
+    letter-spacing: 0.5px;
     margin: 2em auto;
     font-size: 1em;
     width: 10em;
-    transition: all 0.4s ease-in-out;
+    margin-bottom: 6px;
+    outline: none;
+    line-height: 14px;
+    transition: all 0.3s;
 }
 input.btn:hover {
     background:  rgba(0, 0, 0, 0.85);
-    border: 0.1rem outset #fff;
-    color: #fff;
+    border: 0.1rem outset #eee;
+    color: #eee;
     cursor: pointer;
 }
 
