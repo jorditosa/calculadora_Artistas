@@ -151,8 +151,7 @@ label {
 
 input {
     margin: 1rem 0;
-    padding: 0 1rem;
-    height: 4em;
+    padding: 1rem;
     border: 2px solid #fff;
     background-color: #000;
     color: #fff;
@@ -180,15 +179,15 @@ input[type=submit] {
     position: absolute;
     width: 50px;
     height: 50px;
-    top: 0;
-    right: 0;
+    top: 5px;
+    right: 5px;
 }
 .result-overlay_reset {
     position: absolute;
     width: 50px;
     height: 50px;
-    top: 100px;
-    right: 0;
+    top: 60px;
+    right: 5px;
 }
 .result-overlay_close:hover,
 .result-overlay_reset:hover {
@@ -220,6 +219,7 @@ input[type=submit] {
 .calculadora__results__container {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     gap: 2em;
 }
@@ -279,10 +279,7 @@ input.btn {
     border: 0.1rem outset #fff;
     margin: 2em auto;
     font-size: 1em;
-
     width: 10em;
-    height: 3rem;
-
     transition: all 0.4s ease-in-out;
 }
 input.btn:hover {
