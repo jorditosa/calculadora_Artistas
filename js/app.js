@@ -10,6 +10,7 @@ const formulario = document.querySelector('#formulario');
 
 const resultAlert = document.querySelector('.calculadora__results');
 const resultClose = document.querySelector('.result-overlay_close');
+const resultError = document.querySelector('#formCalc');
 
 // EVENT LISTENERS
 salarioIn.addEventListener('input', (e) => {
@@ -28,8 +29,10 @@ formulario.addEventListener('submit', calculadora);
 
 resultClose.addEventListener("click", () =>{
     resultAlert.style.display = "none";
-});
 
+    // Cuando se cierran los resultados se resetea el formulario
+    resetForm();
+});
 
 
 
@@ -37,19 +40,14 @@ resultClose.addEventListener("click", () =>{
 function calculadora(e){
     e.preventDefault();
 
-    resultAlert.classList.add('result-overlay');
-    resultAlert.style.display = "block";
-
     let salaryDaily = parseFloat(salary / days);
     console.log(salaryDaily);
     let segsocCost;
     let segsocWorker;
 
     try {
-        if( isNaN(salary) === true|| isNaN(days) === true || isNaN(irpf) === true) {
-            throw error;
-        }
-        // Cálculo COSTE SEG SOCIAL
+        if( isNaN(salary) === false && isNaN(days) === false && isNaN(irpf) === false) {
+            // Cálculo COSTE SEG SOCIAL
         switch (true){
             case ( salaryDaily <= 275.00 ):
                 segsocCost = salaryDaily * days * 0.326;
@@ -88,30 +86,38 @@ function calculadora(e){
         let totalCost = salary + segsocCost;
         let totalCostText = document.querySelector('.calculadora__coste--text');
         let costResult = document.querySelector('.calculadora__coste');
-        totalCostText.innerHTML = 'El coste total de la nómina será de: '
-        costResult.innerHTML =  (new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(totalCost));
+        totalCostText.textContent = 'El coste total de la nómina será de:'
+        costResult.textContent =  (new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(totalCost));
         
 
         parseFloat(irpfGross = salary * irpf);
         let net = salary - segsocWorker - irpfGross;
         let totalResultText = document.querySelector('.calculadora__neto--text');
         let netResult = document.querySelector('.calculadora__neto');
-        netResult.innerHTML = (new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(net));
-        totalResultText.innerHTML = 'El neto a percibir será de: '
+        netResult.textContent = (new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(net));
+        totalResultText.textContent = 'El neto a percibir será de:'
+
+        resultAlert.classList.add('result-overlay');
+        resultAlert.style.display = "block";
+
+        } else {
+            throw error;
+        };
+        
 
     } catch (error) {
         let errorBox = document.createElement('p');
         errorBox.textContent = "Por favor, introduce datos válidos";
         errorBox.classList.add('error');
 
-        resultAlert.appendChild(errorBox);
+        resultError.appendChild(errorBox);
 
         setTimeout(() => {
-            resultAlert.remove();
+            errorBox.remove();
         }, 5000)
     }
 
-    formulario.reset();
+    resetForm();
 
     // Control bases máximas y mínimas
 
@@ -125,6 +131,11 @@ function calculadora(e){
         salaryDaily = 39;
     }
 };
+
+
+function resetForm () {
+    formulario.reset();
+}
 
 
 

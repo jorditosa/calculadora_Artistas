@@ -1,4 +1,4 @@
-// Variabkes
+// Variables
 const btnEnviar = document.querySelector('#formCalc');
 const formulario = document.querySelector('#formulario');
 
