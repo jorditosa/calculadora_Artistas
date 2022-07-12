@@ -24,15 +24,26 @@
         <section class="form-container">
             <form action="/formulario" method="POST" class="calculadora__section" id="formulario">
                 <div class="form-inputs">
-                    <input type="text" id="salario" pattern="[0-9]{2-6}" placeholder="Tarifa total" max="99999">
-                    <input type="text" id="dias" min="1" max="31" pattern="[0-9]{1-2}" placeholder="Total días alta">
-                    <input type="text" id="irpf" placeholder="IRPF a aplicar" min="15" max="50" pattern="[0-9]{2}">
+                    <div class="form-inputs_item">
+                        <input type="number" id="salario" pattern="[0-9]{2-6}" placeholder="Tarifa total" max="99999">
+                    </div>
+                    <div class="form-inputs_item">
+                        <input type="number" id="dias" min="1" max="31" pattern="[0-9]{1-2}" placeholder="Total días alta">
+                    </div>
+                    <div class="form-inputs_item">
+                        <input type="number" id="irpf" placeholder="IRPF a aplicar" min="15" max="50" pattern="[0-9]{2}">
+                    </div>
                 </div>
                 <input class="btn" type="submit" value="Calcular" id="formCalc">
             </form>   
     
             <section class="calculadora__results">
-                <div>
+                <div class="spinner">
+                    <div class="cube1"></div>
+                    <div class="cube2"></div>
+                </div>
+                <div class="calculadora__results--icons">
+                    <img class="result-overlay_pdf" src="img/document-text-outline.svg" alt="pdf">
                     <img class="result-overlay_close" src="img/close-outline.svg" alt="close">
                 </div>
                 <div class="calculadora__results__container">
@@ -41,22 +52,27 @@
                             <h4>Sueldo bruto total</h4>
                             <p class="calculadora__inputs--salary"></p>
                         </li>
+                        <hr>
                         <li class="calculadora__inputs">
                             <h4>Total días</h4>
                             <p class="calculadora__inputs--days"></p>
                         </li>
+                        <hr>
                         <li class="calculadora__inputs">
                             <h4>IRPF a aplicar</h4>
                             <p class="calculadora__inputs--irpf"></p>
-                        </li>                       
+                        </li>    
+                        <hr>                   
                         <li class="calculadora__inputs">
                             <h4>El neto a percibir será de:</h4>
-                            <span class="calculadora__neto"></span>
+                            <p class="calculadora__neto"></p>
                         </li>
+                        <hr>
                         <li class="calculadora__inputs">
                             <h4>El coste total será de:</h4>
-                            <span class="calculadora__coste"></span>  
+                            <p class="calculadora__coste"></p>  
                         </li>
+                        <hr>
                     </ul>
                     
                 </div> 

@@ -9,8 +9,6 @@ let irpfIn = document.querySelector('#irpf');
 eventListeners();
 
 function eventListeners(){
-    // Cuando la app arranca
-    document.addEventListener('DOMContentLoaded', iniciarApp);
 
     // Campos del formulario
     salarioIn.addEventListener('blur', validarformulario)
@@ -20,10 +18,7 @@ function eventListeners(){
 
 
 // funciones
-function iniciarApp() {
-    btnEnviar.disabled = true;
-    btnEnviar.classList.add('opacity-50')
-}
+
 
 // valida el formulario
 

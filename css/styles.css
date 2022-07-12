@@ -1,14 +1,27 @@
 /**** custom properties ********/
 @font-face {
   font-family: "Canela";
-  src: url("../fonts/canela/Canela-Regular-Trial.otf");
-  font-weight: 1 900;
+  src: url("../fonts/canela/Canela-Light.woff2");
+  font-weight: 1 400;
   font-style: normal;
+}
+@font-face {
+  font-family: "Canela";
+  src: url("../fonts/canela/Canela-Bold.woff2");
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Graphik";
+  src: url("../fonts/canela/Graphik-Regular.woff2");
+  font-weight: 1 999;
 }
 
 :root {
   --validated-color: #6cad52;
-  --error-color: #bb4949;
+  --error-color: #DC3545;
+
+  --main-font: "Canela",sans-serif;
+  --secondary-font: "Graphik",sans-serif;
 }
 
 /* Parte de código totalmente editable dependiendo del estilo principal utilizado en la web. Es un codigo plantilla para poder trabajar y crear la calculadora*/
@@ -46,10 +59,11 @@ header {
 p {
   margin: 0;
   padding: 0;
+  font-family: var(--secondary-font);
 }
 @media (min-width: 768px) {
   p {
-    font-size: 1.6em;
+    font-size: 16px;
   }
 }
 label {
@@ -85,10 +99,6 @@ label {
 .opacity-50:hover {
   cursor: not-allowed;
 }
-.error-text {
-  padding: 0.6rem;
-  background-color: #ae6565;
-}
 
 /**** Calculadora  *******/
 
@@ -103,6 +113,7 @@ label {
   padding: 0.2em 0;
   font-size: 22px;
   text-align: center;
+  font-weight: 400;
 }
 .calculadora-title h1::after {
   content: "";
@@ -140,6 +151,9 @@ label {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+.form-inputs_item {
+  display: block;
+}
 .form-description {
   font-size: 16px;
 }
@@ -159,8 +173,9 @@ label {
 }
 
 input {
-  margin: 1rem 0;
+  display: block;
   min-height: 50px;
+  width: 100%;
   font-size: 16px;
   line-height: 18px;
   padding: 10px 16px;
@@ -174,109 +189,104 @@ input[type="submit"] {
 }
 .result-overlay {
   width: calc(100% - 60px);
-  height: 55%;
   background-color: #fff;
   position: absolute;
-  top: 50%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+
+
+}
+@media (min-width: 768px) {
+  .result-overlay {
+    top: 50%;
+    height: 60vh;
+  }
 }
 
-.result-overlay_close {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  top: 5px;
-  right: 5px;
-}
-.result-overlay_reset {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  top: 60px;
-  right: 5px;
+.result-overlay_close,
+.result-overlay_pdf {
+  width: 32px;
+  height: 32px;
+  margin: 0 0.5em;
 }
 .result-overlay_close:hover,
-.result-overlay_reset:hover {
+.result-overlay_pdf:hover {
   cursor: pointer;
   transform: translateY(-2px);
 }
 
+.calculadora__results__container ul {
+  width: 90%;
+}
 .calculadora__results {
   display: none;
-  padding: 2rem 0;
+  padding: 1rem 0;
   text-align: left;
   color: #000;
 }
-.calculadora__results p {
-  margin: 0.4rem 0;
-  font-size: 1.2em;
+.calculadora__results--icons {
+  display: flex;
+  justify-content: end;
 }
-.calculadora__results span {
-  font-weight: bold;
-  font-size: 1.3em;
-  padding: 0.4rem 0;
+.calculadora__results p {
+  margin: auto 0;
+}
+.calculadora__results h4 {
+  font-size: 0.8em;
+  margin: auto 0;
+  font-weight: 400;
 }
 @media (min-width: 768px) {
-  .calculadora__results span {
-    font-size: 1.2em;
-    letter-spacing: 1.3px;
-    font-weight: 700;
+  .calculadora__results {
+    padding: 2rem;
+  }
+  .calculadora__results__container ul {
+    width: 50%;
+  }
+  .calculadora__results p {
+    letter-spacing: 1.2px;
+  }
+  .calculadora__results h4 {
+    font-size: 1em;
+    letter-spacing: 1.2px;
   }
 }
 .calculadora__results__container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 100%;
+  padding: 1em 0;
 }
 .calculadora__neto--container,
 .calculadora__coste--container {
   text-align: center;
   color: #000;
   font-size: 16px;
-  width: 90%;
   box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3);
   border-radius: 2px;
 }
-@media (min-width: 768px) {
-  .calculadora__neto--container,
-  .calculadora__coste--container {
-    width: 75%;
-  }
-}
 
-.calculadora__neto,
-.calculadora__coste {
-  padding: 1rem 0;
-  display: flex;
-}
-.calculadora__neto::before,
-.calculadora__coste::before {
-  content: "";
-  flex-grow: 1;
-  border-bottom: 1px solid #000;
-  width: 100%;
-  margin: auto 3em;
-}
-.calculadora__neto::after,
-.calculadora__coste::after {
-  content: "";
-  flex-grow: 1;
-  border-bottom: 1px solid #000;
-  width: 100%;
-  margin: auto 3em;
-}
-input[type="text"]::placeholder {
+input[type="number"]::placeholder {
   color: #fff;
   font-size: 1.1em;
 }
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+
+  }
 
 .calculadora__inputs {
   display: flex;
   justify-content: space-between;
+  padding: 0.4em 0.6em;
 }
 
 /* Button Start */
@@ -348,11 +358,67 @@ input.btn:hover {
 /* MENSAJES DE ERROR */
 
 .error {
-  background-color: var(--error-color);
+  color: var(--error-color);
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
   padding: 0.4em;
   text-align: center;
-  grid-column: 1 / 5;
   opacity: 0.9;
+ 
 
   margin: auto 0;
+}
+
+
+/* SPINNER */
+
+.spinner {
+  margin: 100px auto;
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.cube1, .cube2 {
+  background-color: #333;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-cubemove 1.8s infinite ease-in-out;
+  animation: sk-cubemove 1.8s infinite ease-in-out;
+}
+
+.cube2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+@-webkit-keyframes sk-cubemove {
+  25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
+  50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
+  75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
+  100% { -webkit-transform: rotate(-360deg) }
+}
+
+@keyframes sk-cubemove {
+  25% { 
+    transform: translateX(42px) rotate(-90deg) scale(0.5);
+    -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+  } 50% { 
+    transform: translateX(42px) translateY(42px) rotate(-179deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+  } 50.1% { 
+    transform: translateX(42px) translateY(42px) rotate(-180deg);
+    -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+  } 75% { 
+    transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+    -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+  } 100% { 
+    transform: rotate(-360deg);
+    -webkit-transform: rotate(-360deg);
+  }
 }
