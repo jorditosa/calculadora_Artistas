@@ -41,7 +41,6 @@ function calculadora(e){
     e.preventDefault();
 
     let salaryDaily = parseFloat(salary / days);
-    console.log(salaryDaily);
     let segsocCost;
     let segsocWorker;
 
@@ -83,38 +82,46 @@ function calculadora(e){
         }
 
         // Calculos e imprimir resultado por pantalla
+        // 1. Mostrar valores introducidos
+        let inputSalaryShow = document.querySelector('.calculadora__inputs--salary');
+        inputSalaryShow.textContent = (new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(salary));
+        let inputDaysShow = document.querySelector('.calculadora__inputs--days');
+        inputDaysShow.textContent = `${days} días.`
+        let inputIrpfShow = document.querySelector('.calculadora__inputs--irpf');
+        inputIrpfShow.textContent = `${irpf * 100}%.`;
+
+        // 2. Mostrar el coste total calculado
         let totalCost = salary + segsocCost;
         let totalCostText = document.querySelector('.calculadora__coste--text');
         let costResult = document.querySelector('.calculadora__coste');
-        totalCostText.textContent = 'El coste total de la nómina será de:'
         costResult.textContent =  (new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(totalCost));
         
-
+        // 3. Mostrar el neto calculado
         parseFloat(irpfGross = salary * irpf);
         let net = salary - segsocWorker - irpfGross;
         let totalResultText = document.querySelector('.calculadora__neto--text');
         let netResult = document.querySelector('.calculadora__neto');
         netResult.textContent = (new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(net));
-        totalResultText.textContent = 'El neto a percibir será de:'
 
         resultAlert.classList.add('result-overlay');
         resultAlert.style.display = "block";
 
         } else {
-            throw error;
+            let errorBox = document.createElement('p');
+            errorBox.textContent = "Por favor, introduce datos válidos";
+            errorBox.classList.add('error');
+
+            formulario.appendChild(errorBox);
+
+            setTimeout(() => {
+                errorBox.remove();
+                resetForm();
+            }, 3000)
         };
         
 
     } catch (error) {
-        let errorBox = document.createElement('p');
-        errorBox.textContent = "Por favor, introduce datos válidos";
-        errorBox.classList.add('error');
-
-        resultError.appendChild(errorBox);
-
-        setTimeout(() => {
-            errorBox.remove();
-        }, 5000)
+        
     }
 
     resetForm();

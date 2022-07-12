@@ -207,10 +207,11 @@ input[type="submit"] {
   display: none;
   padding: 2rem 0;
   text-align: left;
-  font-size: 1.2em;
+  color: #000;
 }
 .calculadora__results p {
   margin: 0.4rem 0;
+  font-size: 1.2em;
 }
 .calculadora__results span {
   font-weight: bold;
@@ -220,7 +221,7 @@ input[type="submit"] {
 @media (min-width: 768px) {
   .calculadora__results span {
     font-size: 1.2em;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.3px;
     font-weight: 700;
   }
 }
@@ -243,9 +244,8 @@ input[type="submit"] {
 @media (min-width: 768px) {
   .calculadora__neto--container,
   .calculadora__coste--container {
-    width: 50%;
+    width: 75%;
   }
-
 }
 
 .calculadora__neto,
@@ -259,7 +259,7 @@ input[type="submit"] {
   flex-grow: 1;
   border-bottom: 1px solid #000;
   width: 100%;
-  margin: auto 1em;
+  margin: auto 3em;
 }
 .calculadora__neto::after,
 .calculadora__coste::after {
@@ -267,11 +267,16 @@ input[type="submit"] {
   flex-grow: 1;
   border-bottom: 1px solid #000;
   width: 100%;
-  margin: auto 1em;
+  margin: auto 3em;
 }
 input[type="text"]::placeholder {
   color: #fff;
   font-size: 1.1em;
+}
+
+.calculadora__inputs {
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Button Start */
