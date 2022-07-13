@@ -189,30 +189,24 @@ input[type="submit"] {
   background-color: #e2e2e2;
   margin: 1rem 0;
 }
-.result-overlay {
-  width: calc(100% - 60px);
+.result-overlay,
+#spinnerBox {
   background-color: #fff;
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 10;
 }
 @media (min-width: 768px) {
-  .result-overlay {
-    top: 50%;
-    height: 60vh;
+  .result-overlay,
+  #spinnerBox {
+    height: 100%;
   }
 }
 .result-overlay-spinner {
-  width: calc(100% - 60px);
   background-color: #fff;
-  position: absolute;
   z-index: 10;
 }
 @media (min-width: 768px) {
   .result-overlay-spinner {
-    height: 60vh;
+    height: 100%;
   }
 }
 
@@ -436,13 +430,3 @@ label.error {
   }
 }
 
-#spinnerBox {
-  
-  width: calc(100% - 60px);
-  background-color: #fff;
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 99;
-}
