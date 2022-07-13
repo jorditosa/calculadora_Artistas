@@ -193,6 +193,10 @@ input[type="submit"] {
 #spinnerBox {
   background-color: #fff;
   z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
 }
 @media (min-width: 768px) {
   .result-overlay,
@@ -222,9 +226,6 @@ input[type="submit"] {
   transform: translateY(-2px);
 }
 
-.calculadora__results__container ul {
-  width: 90%;
-}
 .calculadora__results {
   display: none;
   padding: 1rem 0;
@@ -239,16 +240,23 @@ input[type="submit"] {
   margin: auto 0;
 }
 .calculadora__results h4 {
-  font-size: 0.8em;
+  font-size: 0.9em;
   margin: auto 0;
   font-weight: 400;
 }
+.calculadora__results__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1em 0;
+  width: 90%;
+  margin: 0 auto;
+}
 @media (min-width: 768px) {
-  .calculadora__results {
-    padding: 2rem;
-  }
-  .calculadora__results__container ul {
-    width: 50%;
+  .calculadora__results__container {
+    width: 75%;
+  
   }
   .calculadora__results p {
     letter-spacing: 1.2px;
@@ -258,13 +266,7 @@ input[type="submit"] {
     letter-spacing: 1.2px;
   }
 }
-.calculadora__results__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1em 0;
-}
+
 .calculadora__neto--container,
 .calculadora__coste--container {
   text-align: center;
@@ -272,6 +274,16 @@ input[type="submit"] {
   font-size: 16px;
   box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3);
   border-radius: 2px;
+}
+.calculadora__inputs--description {
+  padding: 1em 0;
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  .calculadora__inputs--description {
+    padding: 2em 0;
+    font-size: 14px;
+  }
 }
 
 input[type="number"]::placeholder {
@@ -287,7 +299,6 @@ input[type="number"] {
   -moz-appearance: textfield;
 
   }
-
 .calculadora__inputs {
   display: flex;
   justify-content: space-between;
@@ -317,7 +328,6 @@ input.btn {
   margin: 2em auto;
   font-size: 1em;
   width: 10em;
-  margin-bottom: 3em;
   outline: none;
   line-height: 14px;
   transition: all 0.3s;
@@ -327,6 +337,9 @@ input.btn:hover {
   border: 0.1rem outset #eee;
   color: #eee;
   cursor: pointer;
+}
+input.btnDisabled {
+  background: rgba(219, 219, 219, 0.50);
 }
 
 /*   FOOTER   */
@@ -381,14 +394,13 @@ label.error {
 /* SPINNER */
 
 .spinner {
-  margin: 100px auto;
-  width: 40px;
-  height: 40px;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
 }
 
 .cube1, .cube2 {
-  background-color: #333;
+  background-color: #fff;
   width: 15px;
   height: 15px;
   position: absolute;
