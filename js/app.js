@@ -113,9 +113,27 @@ function calculadora(e){
         let netResult = document.querySelector('.calculadora__neto');
         netResult.textContent = (new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(net));
 
-        resultAlert.classList.add('result-overlay');
-        resultAlert.style.display = "block";
+        // 4. Mostrandose en pantalla
+        //4.1 Primero mostrar por pantalla spinner
 
+        let spinnerBox = document.getElementById('spinnerBox');
+        spinnerBox.innerHTML = `
+        <div class="spinner result-overlay-spinner">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
+        </div>
+        `;
+        resultAlert.style.display = "block";
+        setTimeout(() => {
+            spinnerBox.remove();
+
+            //4.2 Añadir resultados después del spinner
+            resultAlert.classList.add('result-overlay');
+            resultAlert.style.display = "block";
+        }, 2000);
+         
+
+        // Avisos de error en caso de dejar las celdas vacías
         } else {
            
             let errorMessages = document.querySelectorAll('.form-inputs_item');
@@ -126,14 +144,12 @@ function calculadora(e){
                 errorBox.classList.add('error');
 
                 errors.appendChild(errorBox);
-
                 setTimeout(() => {
-                    errorBox.remove();
-                    resetForm();
-                 }, 4000);
-            });
-
-           
+                errorBox.remove();
+                resetForm();
+             }, 3000);
+               
+            });      
         };
         
     } catch (error) {
@@ -141,8 +157,6 @@ function calculadora(e){
     }
 
     resetForm();
-
-    // Control bases máximas y mínimas
 
 };
 

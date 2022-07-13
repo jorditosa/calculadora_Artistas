@@ -81,6 +81,8 @@ label {
 
 .calculadora {
   padding: 50px 30px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 
 .logo {
@@ -195,12 +197,21 @@ input[type="submit"] {
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
-
-
 }
 @media (min-width: 768px) {
   .result-overlay {
     top: 50%;
+    height: 60vh;
+  }
+}
+.result-overlay-spinner {
+  width: calc(100% - 60px);
+  background-color: #fff;
+  position: absolute;
+  z-index: 10;
+}
+@media (min-width: 768px) {
+  .result-overlay-spinner {
     height: 60vh;
   }
 }
@@ -357,13 +368,15 @@ input.btn:hover {
 
 /* MENSAJES DE ERROR */
 
+label.error {
+  text-align: left;
+}
 .error {
   color: var(--error-color);
   display: block;
   font-size: 14px;
   font-weight: 700;
   padding: 0.4em;
-  text-align: center;
   opacity: 0.9;
  
 
@@ -421,4 +434,15 @@ input.btn:hover {
     transform: rotate(-360deg);
     -webkit-transform: rotate(-360deg);
   }
+}
+
+#spinnerBox {
+  
+  width: calc(100% - 60px);
+  background-color: #fff;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99;
 }
