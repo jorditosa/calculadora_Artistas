@@ -23,16 +23,16 @@ function iniciarCalc() {
 
     salarioIn.addEventListener('input', (e) => {
         salary = parseFloat(e.target.value);
-        console.log(salary);
+        console.log(e.target.value)
+        if( e.target.value.length < 1 ) {
+            console.log("no hay salario introducido")
+        }
     })
     diasIn.addEventListener('input', (e) => {
         days = parseInt(e.target.value);
-        console.log(days);
-        console.log(e.target.value);
     })
     irpfIn.addEventListener('input', (e) => {
         irpf = (parseFloat(e.target.value) / 100);
-        console.log(irpf);
     })
     formulario.addEventListener('submit', calculadora);
     
@@ -151,10 +151,12 @@ function calculadora(e) {
 
             errorMessages.forEach(errors => {
                 let errorBox = document.createElement('LABEL');
-                errorBox.textContent = "Por favor, introduce datos válidos";
+                errorBox.textContent = "Todos los campos son obligatorios";
                 errorBox.classList.add('error');
 
                 errors.appendChild(errorBox);
+
+          
                 setTimeout(() => {
                     errorBox.remove();
                     resetForm();
