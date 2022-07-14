@@ -12,7 +12,6 @@ const resultAlert = document.querySelector('.calculadora__results');
 const resultClose = document.querySelector('.result-overlay_close');
 const resultBtn = document.querySelector('#formCalc');
 
-
 document.addEventListener('DOMContentLoaded', iniciarCalc)
 
 function iniciarCalc() {
@@ -22,17 +21,14 @@ function iniciarCalc() {
     // EVENT LISTENERS
 
     salarioIn.addEventListener('input', (e) => {
-        salary = parseFloat(e.target.value);
-        console.log(e.target.value)
-        if( e.target.value.length < 1 ) {
-            console.log("no hay salario introducido")
-        }
+        return salary = parseFloat(e.target.value);
+  
     })
     diasIn.addEventListener('input', (e) => {
-        days = parseInt(e.target.value);
+        return days = parseInt(e.target.value);
     })
     irpfIn.addEventListener('input', (e) => {
-        irpf = (parseFloat(e.target.value) / 100);
+        return irpf = (parseFloat(e.target.value) / 100);
     })
     formulario.addEventListener('submit', calculadora);
     
@@ -43,7 +39,7 @@ function iniciarCalc() {
         resetForm();
     });
 
-
+    
 
 // FUNCIONES
 
@@ -150,20 +146,17 @@ function calculadora(e) {
             let errorMessages = document.querySelectorAll('.form-inputs_item');
 
             errorMessages.forEach(errors => {
+                // Mensaje de error si los campos están vacíos
                 let errorBox = document.createElement('LABEL');
                 errorBox.textContent = "Todos los campos son obligatorios";
                 errorBox.classList.add('error');
-
                 errors.appendChild(errorBox);
 
-          
-                setTimeout(() => {
-                    errorBox.remove();
-                    resetForm();
-                }, 3000);
-
+              
             });
         };
+
+    
 
 
     resultBtn.classList.add('btnDisabled');
