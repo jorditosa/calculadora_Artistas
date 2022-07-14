@@ -1,9 +1,16 @@
 /**** custom properties ********/
 @font-face {
-  font-family: "Canela";
+  font-family: "Canela Light";
   src: url("../fonts/canela/Canela-Light.woff2");
-  font-weight: 1 400;
+  font-weight: 1 300;
   font-style: normal;
+  font-stretch: normal;
+}
+@font-face {
+  font-family: "Canela";
+  src: url("../fonts/canela/Canela-BoldItalic.woff2");
+  font-weight: 700;
+  font-style: italic;
 }
 @font-face {
   font-family: "Canela";
@@ -22,6 +29,7 @@
 
   --main-font: "Canela",sans-serif;
   --secondary-font: "Graphik",sans-serif;
+  --light-font: "Canela Light", sans-serif;
 }
 
 /* Parte de código totalmente editable dependiendo del estilo principal utilizado en la web. Es un codigo plantilla para poder trabajar y crear la calculadora*/
@@ -109,19 +117,23 @@ label {
   margin-top: 2em;
   color: #fff;
 }
-.calculadora-title h1 {
+.calculadora-title h2 {
   display: flex;
   border-bottom: 1px solid #fff;
   padding: 0.2em 0;
+  margin: 0;
   font-size: 22px;
   text-align: center;
+  font-family: var(--light-font);
   font-weight: 300;
+  letter-spacing: .5px;
+  line-height: 49px;
 }
-.calculadora-title h1::after {
+.calculadora-title h2::after {
   content: "";
   flex-grow: 1;
   border-bottom: 1px solid #fff;
-  margin: auto 0 auto 1em;
+  margin: auto 0 auto 25px;
 }
 .form-container {
   margin: 2em calc(100%-10%);
@@ -130,7 +142,7 @@ label {
   .calculadora-title {
     margin-top: 5em;
   }
-  .calculadora-title h1 {
+  .calculadora-title h2 {
     border-bottom: none;
     font-size: 32px;
     text-align: left;
@@ -275,7 +287,7 @@ input[type="submit"] {
 }
 .calculadora__inputs--description {
   padding: 1em 0;
-  font-size: 14px;
+  font-size: 12px;
 }
 @media (min-width: 768px) {
   .calculadora__inputs--description {

@@ -156,8 +156,6 @@ function calculadora(e) {
             });
         };
 
-    
-
 
     resultBtn.classList.add('btnDisabled');
     resultBtn.setAttribute('disabled', '');
@@ -168,5 +166,4 @@ function resetForm() {
     location.reload();
     iniciarCalc();
 }
-}
-;
+};
