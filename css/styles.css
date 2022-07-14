@@ -115,12 +115,12 @@ label {
   padding: 0.2em 0;
   font-size: 22px;
   text-align: center;
-  font-weight: 400;
+  font-weight: 300;
 }
 .calculadora-title h1::after {
   content: "";
   flex-grow: 1;
-  border-bottom: 2px solid #fff;
+  border-bottom: 1px solid #fff;
   margin: auto 0 auto 1em;
 }
 .form-container {
@@ -160,11 +160,11 @@ label {
   font-size: 16px;
 }
 .form-description a {
-  text-decoration: none;
-  color: rgb(214, 199, 199);
+  color: #fff;
+  text-decoration: underline;
 }
 .form-description a:hover {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .calculadora p {
@@ -196,7 +196,6 @@ input[type="submit"] {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
 }
 @media (min-width: 768px) {
   .result-overlay,
@@ -243,6 +242,7 @@ input[type="submit"] {
   font-size: 0.9em;
   margin: auto 0;
   font-weight: 400;
+  font-family: var(--secondary-font);
 }
 .calculadora__results__container {
   display: flex;
@@ -263,7 +263,6 @@ input[type="submit"] {
   }
   .calculadora__results h4 {
     font-size: 1em;
-    letter-spacing: 1.2px;
   }
 }
 
@@ -273,7 +272,6 @@ input[type="submit"] {
   color: #000;
   font-size: 16px;
   box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.3);
-  border-radius: 2px;
 }
 .calculadora__inputs--description {
   padding: 1em 0;
@@ -311,8 +309,6 @@ input:focus {
   background-color: #000;
   color: #fff;
   outline: 0;
-  border-color: #80bdff;
-  box-shadow: 0 0 0 .2rem rgba(0,123,255,.25)
 }
 input:invalid {
   background-color: #000;
@@ -377,6 +373,7 @@ input.btnDisabled {
 
 label.error {
   text-align: left;
+  font-family: var(--secondary-font);
 }
 .error {
   color: var(--error-color);

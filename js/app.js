@@ -142,7 +142,7 @@ function calculadora(e) {
                 resultAlert.classList.add('result-overlay');
                 resultAlert.style.display = "block";
 
-            }, 2000);
+            }, 1500);
 
             // Avisos de error en caso de dejar las celdas vacías
     } else {
