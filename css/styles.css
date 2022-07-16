@@ -383,10 +383,6 @@ input.btnDisabled {
 
 /* MENSAJES DE ERROR */
 
-label.error {
-  text-align: left;
-  font-family: var(--secondary-font);
-}
 .error {
   color: var(--error-color);
   display: block;
@@ -397,6 +393,16 @@ label.error {
  
 
   margin: auto 0;
+}
+.error-text {
+  font-family: var(--secondary-font);
+  display: block;
+  font-size: 12px;
+  color: var(--error-color);
+  margin: 0.4em 0;
+}
+.hide {
+  display: none;
 }
 
 

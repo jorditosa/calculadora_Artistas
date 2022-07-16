@@ -1,28 +1,34 @@
 // Obtencion de datos
 
-let salarioIn = document.querySelector('#salario');
-let salary;
-let diasIn = document.querySelector('#dias');
-let days;
-let irpfIn = document.querySelector('#irpf');
-let irpf;
 const formulario = document.querySelector('#formulario');
+
+let salarioIn = document.querySelector('#salario');
+let diasIn = document.querySelector('#dias');
+let irpfIn = document.querySelector('#irpf');
+// Validaciones
+let validClasses = document.getElementsByClassName('valid');
+let invalidClasses = document.getElementsByClassName('error');
+
+let salary;
+let days;
+let irpf;
 
 const resultAlert = document.querySelector('.calculadora__results');
 const resultClose = document.querySelector('.result-overlay_close');
 const resultBtn = document.querySelector('#formCalc');
 
+
+// EVENT LISTENERS
 document.addEventListener('DOMContentLoaded', iniciarCalc)
 
 function iniciarCalc() {
 
     console.log("app iniciada");
 
-    // EVENT LISTENERS
+
 
     salarioIn.addEventListener('input', (e) => {
         return salary = parseFloat(e.target.value);
-  
     })
     diasIn.addEventListener('input', (e) => {
         return days = parseInt(e.target.value);
@@ -30,6 +36,8 @@ function iniciarCalc() {
     irpfIn.addEventListener('input', (e) => {
         return irpf = (parseFloat(e.target.value) / 100);
     })
+    // Validamos formulario
+    validarformulario();
     formulario.addEventListener('submit', calculadora);
     
     resultClose.addEventListener("click", () => {
@@ -38,14 +46,13 @@ function iniciarCalc() {
         // Cuando se cierran los resultados se resetea el formulario
         resetForm();
     });
-
+    
     
 
 // FUNCIONES
 
 function calculadora(e) {
     e.preventDefault();
-
 
     let salaryDaily = parseFloat(salary / days);
     let segsocCost;
@@ -142,28 +149,62 @@ function calculadora(e) {
 
             // Avisos de error en caso de dejar las celdas vacías
     } else {
-
-            let errorMessages = document.querySelectorAll('.form-inputs_item');
-
-            errorMessages.forEach(errors => {
-                // Mensaje de error si los campos están vacíos
-                let errorBox = document.createElement('LABEL');
-                errorBox.textContent = "Todos los campos son obligatorios";
-                errorBox.classList.add('error');
-                errors.appendChild(errorBox);
-
               
-            });
+        validarformulario()
+            };
         };
-
-
-    resultBtn.classList.add('btnDisabled');
-    resultBtn.setAttribute('disabled', '');
 };
 
+
+function validarformulario() {
+
+    let salaryError = document.getElementById('salary-error');
+    let daysError = document.getElementById('days-error');
+    let irpfError = document.getElementById('irpf-error');
+
+    const salaryVerify = (number) => {
+        const regex = /^([0-9]{2,5})/;
+        return regex.test(number);
+    }
+    const daysVerify = (number) => {
+        const regex = /^(3[01]|[12][0-9]|[1-9])$/;
+        return regex.test(number);
+    }
+    const irpfVerify = (number) => {
+        const regex = /^([0-9]{2})/;
+        return regex.test(number);
+    }
+
+    // Salario total
+    salarioIn.addEventListener('input', () => {
+        if ( salaryVerify(salarioIn.value) ) {
+            salaryError.classList.add('hide');
+        } else {
+            salaryError.classList.remove('hide');
+        }
+    });
+    // Días total
+    diasIn.addEventListener('input', () => {
+        if ( daysVerify(diasIn.value) ) {
+            daysError.classList.add('hide');
+        }  else {
+            daysError.classList.remove('hide');
+        }
+    });
+    // Días total
+    irpfIn.addEventListener('input', () => {
+        if ( irpfVerify(irpfIn.value) ) {
+            irpfError.classList.add('hide');
+        }  else {
+            irpfError.classList.remove('hide');
+        }
+    });
+
+
+}
 
 function resetForm() {
     location.reload();
     iniciarCalc();
 }
-};
+;
